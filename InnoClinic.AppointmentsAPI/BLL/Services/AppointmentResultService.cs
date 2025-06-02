@@ -15,12 +15,12 @@ public class AppointmentResultService(IAppointmentResultRepository repository, I
 
         if (result is null) throw new AppointmentResultNotFoundException(id);
 
-        return mapper.Map<AppointmentResultDto>(result);
+        return _mapper.Map<AppointmentResultDto>(result);
     }
     public async Task<IReadOnlyCollection<AppointmentResultDto>> GetResultsByDoctorIdAsync(Guid doctorId, CancellationToken cancellationToken = default)
     {
         var result = await repository.GetByDoctorIdAsync(doctorId, cancellationToken);
 
-        return mapper.Map<IReadOnlyCollection<AppointmentResultDto>>(result);
+        return _mapper.Map<IReadOnlyCollection<AppointmentResultDto>>(result);
     }
 }
