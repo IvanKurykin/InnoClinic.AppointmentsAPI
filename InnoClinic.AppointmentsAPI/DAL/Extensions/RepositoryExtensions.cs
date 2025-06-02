@@ -19,6 +19,7 @@ public static class RepositoryExtensions
         services.AddScoped<IOfficeRepository, OfficeRepository>();
         services.AddScoped<IServiceRepository, ServiceRepository>();
         services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+        services.AddScoped<IAppointmentResultRepository, AppointmentResultRepository>();
 
         return services;
     }
