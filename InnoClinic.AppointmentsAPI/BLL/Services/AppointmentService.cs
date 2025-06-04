@@ -11,16 +11,16 @@ public class AppointmentService(IAppointmentRepository repository, IMapper mappe
 {
     public async Task ApproveAppointmentAsync(Guid id, bool isApproved, CancellationToken cancellationToken = default)
     {
-        var appointment = await _repository.GetByIdAsync(id, cancellationToken);
+        var appointment = await repository.GetByIdWithDetailsAsync(id, cancellationToken);
 
         if (appointment is null) throw new AppointmentNotFoundException(id);
-
+        
         appointment.IsAproved = isApproved;
 
         await _repository.UpdateAsync(appointment, cancellationToken);
     }
 
-    public async Task<AppointmentDto?> GetAppointmentByIdWithDetailsAsync(Guid id, CancellationToken cancellationToken = default)
+    public async Task<AppointmentDto?> GetAppointmentByIdWithDependenciesAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var appointment = await repository.GetByIdWithDetailsAsync(id, cancellationToken);
 
@@ -29,7 +29,7 @@ public class AppointmentService(IAppointmentRepository repository, IMapper mappe
         return _mapper.Map<AppointmentDto>(appointment);
     }
 
-    public async Task<IReadOnlyCollection<AppointmentDto>> GetAppointmentsWithDetailsAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyCollection<AppointmentDto>> GetAppointmentsWithDependenciesAsync(CancellationToken cancellationToken = default)
     {
         var appointments = await repository.GetAllWithDetailsAsync(cancellationToken);
 
