@@ -6,5 +6,5 @@ public sealed class Office
     public required string City { get; set; } 
     public required string Street { get; set; }
     public required string HouseNumber { get; set; }
-    public IEnumerable<Appointment> Appointments { get; set; } = [];
+    public ICollection<Appointment> Appointments { get; set; } = [];
 }

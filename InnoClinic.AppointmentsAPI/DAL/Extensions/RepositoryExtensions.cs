@@ -4,9 +4,11 @@ using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using DAL.Interfaces;
 using DAL.Repositories;
+using System.Diagnostics.CodeAnalysis;
 
 namespace DAL.Extensions;
 
+[ExcludeFromCodeCoverage]
 public static class RepositoryExtensions
 {
     public static IServiceCollection AddDataAccessLayerServices(this IServiceCollection services, IConfiguration configuration)

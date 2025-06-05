@@ -11,7 +11,7 @@ public class AppointmentService(IAppointmentRepository repository, IMapper mappe
 {
     public async Task ApproveAppointmentAsync(Guid id, bool isApproved, CancellationToken cancellationToken = default)
     {
-        var appointment = await repository.GetByIdWithDetailsAsync(id, cancellationToken);
+        var appointment = await repository.GetByIdAsync(id, cancellationToken);
 
         if (appointment is null) throw new AppointmentNotFoundException(id);
         
