@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{085CAD6D-6863-4208-BF85-41F8F5505CC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{04CB4047-0703-4B84-AC40-F788A86C89BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{FF77959B-C702-416C-BCBE-D6C7A9B733D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A6341BBB-E837-4580-B245-100A0A12E866}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1AEB3562-048E-4B44-AC5F-16BF3EA2CDA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +34,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{085CAD6D-6863-4208-BF85-41F8F5505CC7} = {A6341BBB-E837-4580-B245-100A0A12E866}
+		{04CB4047-0703-4B84-AC40-F788A86C89BB} = {A6341BBB-E837-4580-B245-100A0A12E866}
+		{FF77959B-C702-416C-BCBE-D6C7A9B733D1} = {A6341BBB-E837-4580-B245-100A0A12E866}
 	EndGlobalSection
 EndGlobal

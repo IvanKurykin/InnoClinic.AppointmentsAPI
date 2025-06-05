@@ -10,8 +10,6 @@ public sealed class PatientConfiguration : IEntityTypeConfiguration<Patient>
     {
         builder.ToTable("Patients");
 
-        builder.HasBaseType<Person>();
-
         builder.HasIndex(p => p.Email).IsUnique();
 
         builder.HasMany(p => p.Appointments)
