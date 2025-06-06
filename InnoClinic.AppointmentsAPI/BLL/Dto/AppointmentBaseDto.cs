@@ -1,6 +1,6 @@
 ﻿namespace BLL.Dto;
 
-public abstract class AppointmentBaseDto
+public class AppointmentBaseDto
 {
     public required Guid PatientId { get; set; }
     public required Guid DoctorId { get; set; }

@@ -39,5 +39,5 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         await _dbSet.FindAsync(new object[] { id }, cancellationToken);
     
     public virtual async Task<IReadOnlyCollection<T>> GetAllAsync(CancellationToken cancellationToken = default) =>
-        await _dbSet.ToListAsync(cancellationToken);   
+        await _dbSet.AsNoTracking().ToListAsync(cancellationToken);   
 }

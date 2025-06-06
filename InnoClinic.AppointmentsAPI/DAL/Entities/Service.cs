@@ -6,5 +6,5 @@ public sealed class Service
     public required string Name { get; set; }
     public string Description { get; set; } = string.Empty;
     public decimal Price { get; set; }
-    public IEnumerable<Appointment> Appointments { get; set; } = [];
+    public ICollection<Appointment> Appointments { get; set; } = [];
 }
