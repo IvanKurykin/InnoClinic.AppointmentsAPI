@@ -1,6 +1,6 @@
 ﻿namespace BLL.Dto;
 
-public sealed class OfficeDto : PersonDto
+public sealed class OfficeDto
 {
     public required string Id { get; set; }
     public string City { get; set; } = string.Empty;

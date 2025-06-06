@@ -6,9 +6,9 @@ using MassTransit;
 
 namespace BLL.Consumers.OfficeConsumers;
 
-public class OfficeUpdatedConsumer(IOfficeRepository officeRepository, IMapper mapper) : IConsumer<OfficeDeletedIntegrationEvent>
+public class OfficeUpdatedConsumer(IOfficeRepository officeRepository, IMapper mapper) : IConsumer<OfficeUpdatedIntegrationEvent>
 {
-    public async Task Consume(ConsumeContext<OfficeDeletedIntegrationEvent> context)
+    public async Task Consume(ConsumeContext<OfficeUpdatedIntegrationEvent> context)
     {
         var integrationEvent = context.Message;
 

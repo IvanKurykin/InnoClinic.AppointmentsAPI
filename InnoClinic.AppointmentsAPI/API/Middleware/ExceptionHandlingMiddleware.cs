@@ -49,8 +49,8 @@ public class ExceptionHandlingMiddleware
 
         context.Response.StatusCode = exception switch
         {
-            NotFoundException<Service> or NotFoundException<Appointment> or NotFoundException<AppointmentResult> => StatusCodes.Status404NotFound,
-            BadRequestException<Service> or BadRequestException<Appointment> or BadRequestException<AppointmentResult> => StatusCodes.Status400BadRequest,
+            NotFoundException<Appointment> or NotFoundException<AppointmentResult> => StatusCodes.Status404NotFound,
+            BadRequestException<Appointment> or BadRequestException<AppointmentResult> => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status500InternalServerError
         };
 
